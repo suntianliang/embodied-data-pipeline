@@ -1,0 +1,6 @@
+clip_id,file_path,status,reason,quality_score,camera_mode,width,height,r_fps,avg_fps,is_vfr,duration_s,foot_out_frames,foot_coverage,max_person_height_px,mean_person_ratio,mean_kpt_conf,kpt_jerk,mean_blur_score,mean_contrast,camera_residual
+-k3NP5lPfxk_clip01,data/clips/-k3NP5lPfxk_clip01.mp4,REJECT,REJECT_EXCESSIVE_JERK: 关键点抖动 245.4 > 40.0,0.984,STATIC_RECOMMENDED,1280,720,30.0,30.0,False,5.13,0,1.0,232.0,0.022,0.808,245.42,88.4,47.4,0.02
+-k3NP5lPfxk_clip02,data/clips/-k3NP5lPfxk_clip02.mp4,PASS,各层画面与关键点准入指标达标,0.99,STATIC_RECOMMENDED,1280,720,30.0,30.0,False,5.1,0,1.0,227.0,0.03,0.826,25.07,87.3,47.5,0.02
+-k3NP5lPfxk_clip03,data/clips/-k3NP5lPfxk_clip03.mp4,PASS,各层画面与关键点准入指标达标,0.978,STATIC_RECOMMENDED,1280,720,30.0,30.0,False,5.1,0,1.0,235.0,0.024,0.791,39.43,87.4,47.4,0.02
+-xuBuWdKOBw_clip01,data/clips/-xuBuWdKOBw_clip01.mp4,REJECT,"REJECT_FOOT_OUT_OF_FRAME: 脚出画 11 帧, 覆盖率 35.3%; REJECT_EXCESSIVE_JERK: 关键点抖动 631.5 > 40.0",0.747,STATIC_RECOMMENDED,1920,1080,30.0,30.0,False,5.57,11,0.353,821.0,0.147,0.751,631.5,211.6,57.7,0.36
+-xuBuWdKOBw_clip02,data/clips/-xuBuWdKOBw_clip02.mp4,REJECT,"REJECT_FOOT_OUT_OF_FRAME: 脚出画 9 帧, 覆盖率 47.1%; REJECT_EXCESSIVE_JERK: 关键点抖动 1107.9 > 40.0",0.765,STATIC_RECOMMENDED,1920,1080,30.0,30.0,False,5.57,9,0.471,837.0,0.095,0.759,1107.9,196.0,57.7,0.66

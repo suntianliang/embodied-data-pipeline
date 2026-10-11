@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Virtual environments & IDEs
+.env
+.venv
+env/
+venv/
+.idea/
+.vscode/
+
+# Large Datasets & Video Blobs
+data/raw/
+data/clips/
+data/clips.zip
+data/videos_review/
+data/dataset_v1/
+data/poses/
+data/sim/
+data/metadata.db
+
+# Third-party heavy clones
+mujoco_menagerie/
+
+# Licensed heavy models (>100MB SMPL-X models)
+GMR/assets/body_models/
+*.tar.gz
+*.zip

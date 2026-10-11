@@ -1,0 +1,82 @@
+paths:
+  raw_root: data/raw         # ← 改成你的外接盘路径，没有就改 data/raw
+  poses: data/poses
+  clips: data/clips
+  retargeted: data/retargeted
+  sim: data/sim
+  dataset: data/dataset_v1
+  db: data/metadata.db
+
+video:
+  target_w: 1280
+  target_h: 720
+  target_fps: 24
+  min_duration_s: 2.0
+  max_duration_s: 10.0
+  max_file_mb: 300
+  delete_raw_after_pose: false
+  # delete_raw_after_pose: true         # 256G 机型建议 true
+
+dedup:
+  phash_hamming: 8
+  url_normalize: true
+
+pose:
+  model: wham
+  local_batch_size: 1                 # M4 本地只跑 demo
+  cloud_batch_size: 8                 # 云上用这个
+  cloud_instance: "auto"              # 云上显存>=24G 时可加大
+
+scoring:
+  gate:
+    min_conf: 0.35
+    max_occlusion_ratio: 0.15
+    max_jerk_norm: 40.0
+    max_ground_penetration_m: 0.04
+    min_duration_s: 1.5
+    max_foot_slip_m: 0.08
+  pass_threshold: 0.60
+
+retarget:
+  robot: g1
+  robot_urdf: assets/unitree_g1/g1.xml
+  control_hz: 100
+  lowpass_cutoff_hz: 6
+  clip_velocity: true
+  clip_accel: true
+  max_joint_vel: 25.0
+  max_joint_acc: 400.0
+
+video_filter:
+  min_res_height: 480
+  min_duration_s: 2.0
+  max_duration_s: 300.0
+  min_person_height_px: 180
+  max_foot_out_frames: 2
+  min_kpt_conf: 0.50
+  max_kpt_jerk: 40.0
+  min_foot_coverage: 0.80
+
+gmr_postprocess:
+  align_ground_height: true
+  ground_percentile: 10
+  lock_stance_foot: true
+  max_stance_height_m: 0.045
+  limit_safety_margin_deg: 0.3
+  smooth_cutoff_hz: 6.0
+
+quality_audit:
+  max_penetration_ratio: 0.02
+  max_penetration_m: 0.05
+  max_floating_clearance_m: 0.04
+  max_self_collision_ratio: 0.01
+  max_vel_spike_ratio: 0.02
+  max_foot_slip_cm_per_step: 5.0
+  max_limit_saturation_ratio: 0.15
+
+dataset:
+  window_s: 3.0
+  stride_s: 1.5
+  val_split_ratio: 0.15
+  split_by_video_id: true
+  target_samples: 400
